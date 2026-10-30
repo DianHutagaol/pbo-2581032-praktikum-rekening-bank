@@ -26,7 +26,29 @@ public class BankMini {
                 continue;
             }
 
-
+            if (pilihan == 1) {
+                System.out.print("Masukkan jumlah setor: ");
+                int jumlahSetor = scanner.nextInt();
+                if (rekening.setor(jumlahSetor)) {
+                    System.out.println("Setor berhasil.");
+                } else {
+                    System.out.println("Setor ditolak!");
+                }
+            } else if (pilihan == 2) {
+                System.out.print("Masukkan jumlah tarik: ");
+                int jumlahTarik = scanner.nextInt();
+                if (rekening.tarik(jumlahTarik)) {
+                    System.out.println("Penarikan berhasil.");
+                } else {
+                    System.out.println("Penarikan ditolak!");
+                }
+            } else if (pilihan == 3) {
+                rekening.cetakInfo();
+            } else if (pilihan == 0) {
+                System.out.println("Keluar dari sistem.");
+            } else {
+                System.out.println("Menu tidak dikenal.");
+            }
         }
 
         System.out.println("\n~~~~~~~~~~ SALDO AKHIR ~~~~~~~~~~");
